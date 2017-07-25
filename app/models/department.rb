@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #
 
+# https://github.com/webwarehouse/webwarehouse/wiki/Department
 class Department < ApplicationRecord
-  validates :name, presence:true
+  validates :name, presence: true
 end
