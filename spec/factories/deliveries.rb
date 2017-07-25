@@ -8,7 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-# https://github.com/webwarehouse/webwarehouse/wiki/Delivery-Method
-class Delivery < ApplicationRecord
-  validates :name, presence: true
+FactoryGirl.define do
+  factory :delivery do
+    name "MyString"
+  end
 end

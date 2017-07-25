@@ -8,7 +8,13 @@
 #  updated_at :datetime         not null
 #
 
-# https://github.com/webwarehouse/webwarehouse/wiki/Delivery-Method
-class Delivery < ApplicationRecord
-  validates :name, presence: true
+require 'rails_helper'
+
+RSpec.describe Delivery, type: :model do
+   describe 'valid name' do
+     it 'is valid with name' do
+       del = build(:delivery)
+       expect(del.valid?).to eq true
+     end
+   end
 end
