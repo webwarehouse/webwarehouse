@@ -5,8 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-Unit.create(name: 'кг.', description: 'Килограмм')
-Unit.create(name: 'шт.', description: 'Штук')
-Unit.create(name: 'л.', description: 'Литры')
-Unit.create(name: 'порц.', description: 'Порций')
+Dir["./units/*.rb"].each {|file| load file }
