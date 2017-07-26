@@ -10,8 +10,8 @@
 #  updated_at    :datetime         not null
 #
 
-# https://github.com/webwarehouse/webwarehouse/wiki/Image
-class Image < ApplicationRecord
-  validates :name, presence: true
-  belongs_to :imageble, polymorphic: true
+FactoryGirl.define do
+  factory :image do
+    name "MyString"
+  end
 end

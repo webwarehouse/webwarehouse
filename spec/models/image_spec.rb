@@ -10,8 +10,15 @@
 #  updated_at    :datetime         not null
 #
 
-# https://github.com/webwarehouse/webwarehouse/wiki/Image
-class Image < ApplicationRecord
-  validates :name, presence: true
-  belongs_to :imageble, polymorphic: true
+require 'pry'
+require 'rails_helper'
+
+RSpec.describe Image, type: :model do
+  describe 'name' do
+    it 'is valid with name' do
+      image = build(:image)
+      binding.pry
+      expect(image.valid?).to eq true
+    end
+  end
 end
