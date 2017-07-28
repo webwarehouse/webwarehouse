@@ -16,7 +16,7 @@ require 'rails_helper'
 RSpec.describe Worker, type: :model do
   describe 'firs_name, last_name, middle_name and pin' do
     it 'is valid with first_name, last_name, middle_name and pin' do
-      wrkr = build(:worker)
+      wrkr == build(:worker)
       expect(wrkr.valid?).to eq true
     end
   end
