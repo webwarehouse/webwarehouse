@@ -8,7 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-# https://github.com/webwarehouse/webwarehouse/wiki/Payment-Method
-class PaymentMethod < ApplicationRecord
-  validates :name, presence: true
+require 'rails_helper'
+
+RSpec.describe PaymentMethod, type: :model do
+  it { should validate_presence_of(:name) }
 end

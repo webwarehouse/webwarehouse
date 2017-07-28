@@ -8,7 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-# https://github.com/webwarehouse/webwarehouse/wiki/Payment-Method
-class PaymentMethod < ApplicationRecord
-  validates :name, presence: true
+FactoryGirl.define do
+  factory :payment_method do
+    name "MyString"
+  end
 end
