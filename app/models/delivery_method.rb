@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: deliveries
+# Table name: delivery_methods
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -9,6 +9,6 @@
 #
 
 # https://github.com/webwarehouse/webwarehouse/wiki/Delivery-Method
-class Delivery < ApplicationRecord
+class DeliveryMethod < ApplicationRecord
   validates :name, presence: true
 end
