@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #
 
+# https://github.com/webwarehouse/webwarehouse/wiki/Workers
 class Worker < ApplicationRecord
   validates :first_name, :last_name, :middle_name, :pin, presence: true
   has_many :departments
