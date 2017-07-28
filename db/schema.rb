@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725231035) do
+ActiveRecord::Schema.define(version: 20170728124044) do
 
   create_table "deliveries", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "delivery_methods", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,9 +24,12 @@ ActiveRecord::Schema.define(version: 20170725231035) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "units", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+  create_table "events", force: :cascade do |t|
+    t.string "author"
+    t.string "type"
+    t.boolean "status"
+    t.string "event_object"
+    t.text "rand_attr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
