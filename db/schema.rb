@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728000700) do
+ActiveRecord::Schema.define(version: 20170728215020) do
 
   create_table "deliveries", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "delivery_methods", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,27 +23,6 @@ ActiveRecord::Schema.define(version: 20170728000700) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "worker_id"
-  end
-
-  create_table "images", force: :cascade do |t|
-    t.string "name"
-    t.integer "imageble_id"
-    t.string "imageble_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "units", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "warehouses", force: :cascade do |t|
@@ -66,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170728000700) do
     t.integer "pin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pin"], name: "index_workers_on_pin"
   end
 
 end
