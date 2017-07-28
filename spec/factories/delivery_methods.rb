@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: deliveries
+# Table name: delivery_methods
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -9,7 +9,7 @@
 #
 
 FactoryGirl.define do
-  factory :delivery do
+  factory :delivery_method do
     name "MyString"
   end
 end

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: deliveries
+# Table name: delivery_methods
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -10,11 +10,6 @@
 
 require 'rails_helper'
 
-RSpec.describe Delivery, type: :model do
-   describe 'valid name' do
-     it 'is valid with name' do
-       del = build(:delivery)
-       expect(del.valid?).to eq true
-     end
-   end
+RSpec.describe DeliveryMethod, type: :model do
+  it { should validate_presence_of(:name) }
 end
