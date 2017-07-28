@@ -11,11 +11,6 @@
 require 'rails_helper'
 
 RSpec.describe Department, type: :model do
-  describe 'name' do
-    it 'is valid with name' do
-      dep = build(:department)
-      expect(dep.valid?).to eq true
-    end
-  end
-
+  it { should validate_presence_of(:name) }
+  it { should belong_to(:worker) }
 end
