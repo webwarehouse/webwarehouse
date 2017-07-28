@@ -11,7 +11,9 @@
 #  updated_at  :datetime         not null
 #
 
-class Worker < ApplicationRecord
-  validates :first_name, :last_name, :middle_name, :pin, presence: true
-  has_many :departments
+require 'rails_helper'
+
+RSpec.describe Worker, type: :model do
+  it { should validate_presence_of(:first_name, :last_name, :middle_name, :pin) }
+  it { should have_many(:departments) }
 end

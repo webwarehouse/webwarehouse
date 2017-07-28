@@ -11,4 +11,5 @@
 # https://github.com/webwarehouse/webwarehouse/wiki/Department
 class Department < ApplicationRecord
   validates :name, presence: true
+  belongs_to :worker
 end
