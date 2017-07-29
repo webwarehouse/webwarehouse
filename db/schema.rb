@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725093910) do
+ActiveRecord::Schema.define(version: 20170729000229) do
+
+  create_table "deliveries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "delivery_methods", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "worker_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "img_type"
+    t.integer "img_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["img_type", "img_id"], name: "index_images_on_img_type_and_img_id"
+  end
+
+  create_table "payment_methods", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,6 +58,16 @@ ActiveRecord::Schema.define(version: 20170725093910) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "workers", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "middle_name"
+    t.integer "pin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pin"], name: "index_workers_on_pin"
   end
 
 end
