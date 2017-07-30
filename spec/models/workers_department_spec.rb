@@ -9,7 +9,9 @@
 #  updated_at    :datetime         not null
 #
 
-class WorkersDepartment < ApplicationRecord
-  belongs_to :worker
-  belongs_to :department
+require 'rails_helper'
+
+RSpec.describe WorkersDepartment, type: :model do
+  it { should belong_to(:worker) }
+  it { should belong_to(:department) }
 end

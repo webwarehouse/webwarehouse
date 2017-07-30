@@ -9,7 +9,9 @@
 #  updated_at    :datetime         not null
 #
 
-class WorkersDepartment < ApplicationRecord
-  belongs_to :worker
-  belongs_to :department
+FactoryGirl.define do
+  factory :workers_department do
+    worker nil
+    department nil
+  end
 end

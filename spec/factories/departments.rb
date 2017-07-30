@@ -6,7 +6,6 @@
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  worker_id  :integer
 #
 
 FactoryGirl.define do
