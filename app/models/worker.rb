@@ -14,5 +14,7 @@
 # https://github.com/webwarehouse/webwarehouse/wiki/Workers
 class Worker < ApplicationRecord
   validates :first_name, :last_name, :middle_name, :pin, presence: true
-  has_many :departments
+
+  has_many  :workers_department
+  has_many  :departments, through: :workers_department
 end
