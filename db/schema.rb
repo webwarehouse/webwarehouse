@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730221422) do
+ActiveRecord::Schema.define(version: 20170731125612) do
 
   create_table "delivery_methods", force: :cascade do |t|
     t.string "name"
@@ -24,10 +24,28 @@ ActiveRecord::Schema.define(version: 20170730221422) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.string "imageable_type"
+    t.integer "imageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
+  end
+
   create_table "payment_methods", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.integer "worker_id"
+    t.integer "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_staffs_on_department_id"
+    t.index ["worker_id"], name: "index_staffs_on_worker_id"
   end
 
   create_table "units", force: :cascade do |t|
@@ -52,15 +70,6 @@ ActiveRecord::Schema.define(version: 20170730221422) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pin"], name: "index_workers_on_pin"
-  end
-
-  create_table "workers_departments", force: :cascade do |t|
-    t.integer "worker_id"
-    t.integer "department_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["department_id"], name: "index_workers_departments_on_department_id"
-    t.index ["worker_id"], name: "index_workers_departments_on_worker_id"
   end
 
 end

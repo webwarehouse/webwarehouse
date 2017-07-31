@@ -15,6 +15,6 @@
 class Worker < ApplicationRecord
   validates :first_name, :last_name, :middle_name, :pin, presence: true
 
-  has_many  :workers_department
-  has_many  :departments, through: :workers_department
+  has_many  :staffs
+  has_many  :departments, through: :staffs
 end

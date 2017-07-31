@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: workers_departments
+# Table name: staffs
 #
 #  id            :integer          not null, primary key
 #  worker_id     :integer
@@ -9,7 +9,9 @@
 #  updated_at    :datetime         not null
 #
 
-class WorkersDepartment < ApplicationRecord
-  belongs_to :worker
-  belongs_to :department
+require 'rails_helper'
+
+RSpec.describe Staff, type: :model do
+  it { should belong_to(:worker) }
+  it { should belong_to(:department) }
 end

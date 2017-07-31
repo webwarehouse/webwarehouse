@@ -12,6 +12,6 @@
 class Department < ApplicationRecord
   validates :name, presence: true
 
-  has_many  :workers_department
-  has_many  :workers, through: :workers_department
+  has_many  :staffs
+  has_many  :workers, through: :staffs
 end

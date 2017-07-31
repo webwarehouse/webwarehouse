@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: workers_departments
+# Table name: staffs
 #
 #  id            :integer          not null, primary key
 #  worker_id     :integer
@@ -9,9 +9,7 @@
 #  updated_at    :datetime         not null
 #
 
-FactoryGirl.define do
-  factory :workers_department do
-    worker nil
-    department nil
-  end
+class Staff < ApplicationRecord
+  belongs_to :worker
+  belongs_to :department
 end

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: workers_departments
+# Table name: staffs
 #
 #  id            :integer          not null, primary key
 #  worker_id     :integer
@@ -9,9 +9,9 @@
 #  updated_at    :datetime         not null
 #
 
-require 'rails_helper'
-
-RSpec.describe WorkersDepartment, type: :model do
-  it { should belong_to(:worker) }
-  it { should belong_to(:department) }
+FactoryGirl.define do
+  factory :staff do
+    worker nil
+    department nil
+  end
 end
