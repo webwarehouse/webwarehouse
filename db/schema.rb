@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20170731125612) do
     t.integer "pin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pin"], name: "index_workers_on_pin"
   end
 
 end
