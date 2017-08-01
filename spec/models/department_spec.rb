@@ -3,7 +3,7 @@
 # Table name: departments
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -11,11 +11,6 @@
 require 'rails_helper'
 
 RSpec.describe Department, type: :model do
-  describe 'name' do
-    it 'is valid with name' do
-      dep = build(:department)
-      expect(dep.valid?).to eq true
-    end
-  end
-
+  it { should validate_presence_of(:title) }
+  it { should have_many(:workers) }
 end

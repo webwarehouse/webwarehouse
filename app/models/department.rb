@@ -3,12 +3,15 @@
 # Table name: departments
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 # https://github.com/webwarehouse/webwarehouse/wiki/Department
 class Department < ApplicationRecord
-  validates :name, presence: true
+  validates :title, presence: true
+
+  has_many  :staffs
+  has_many  :workers, through: :staffs
 end
