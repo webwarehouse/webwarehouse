@@ -13,19 +13,19 @@
 ActiveRecord::Schema.define(version: 20170731125612) do
 
   create_table "delivery_methods", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "departments", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.string "imageable_type"
     t.integer "imageable_id"
     t.datetime "created_at", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170731125612) do
   end
 
   create_table "payment_methods", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,14 +49,14 @@ ActiveRecord::Schema.define(version: 20170731125612) do
   end
 
   create_table "units", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "warehouses", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170731125612) do
     t.integer "pin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pin"], name: "index_workers_on_pin", unique: true
   end
 
 end

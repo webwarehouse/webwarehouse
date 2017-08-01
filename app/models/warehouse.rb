@@ -3,7 +3,7 @@
 # Table name: warehouses
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  title      :string
 #  code       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -11,5 +11,5 @@
 
 # https://github.com/webwarehouse/webwarehouse/wiki/Warehouse
 class Warehouse < ApplicationRecord
-  validates :name, :code, presence: true
+  validates :title, :code, presence: true
 end
