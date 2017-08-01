@@ -4,9 +4,10 @@ class CreateWorkers < ActiveRecord::Migration[5.1]
       t.string :first_name, null: false
       t.string :last_name, null: false
       t.string :middle_name
-      t.integer :pin, unique: true
+      t.integer :pin
 
       t.timestamps
     end
+    add_index :workers, :pin, unique: true
   end
 end
