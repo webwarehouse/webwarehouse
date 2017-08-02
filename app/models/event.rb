@@ -12,5 +12,5 @@
 
 class Event < ApplicationRecord
   validates :author, :type, :status, :event_object, :rand_attr, presence: true
-  serialize :rand_attr
+  serialize :rand_attr, polymorphic: true
 end
