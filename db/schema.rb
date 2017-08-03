@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731125612) do
+ActiveRecord::Schema.define(version: 20170803231127) do
 
   create_table "delivery_methods", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20170731125612) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "kind"
+    t.boolean "status"
+    t.text "rand_attr"
+    t.string "eventable_type"
+    t.integer "eventable_id"
+    t.integer "worker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eventable_type", "eventable_id"], name: "index_events_on_eventable_type_and_eventable_id"
+    t.index ["worker_id"], name: "index_events_on_worker_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -37,6 +50,16 @@ ActiveRecord::Schema.define(version: 20170731125612) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "article"
+    t.integer "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unit_id"], name: "index_products_on_unit_id"
   end
 
   create_table "staffs", force: :cascade do |t|
