@@ -2,15 +2,20 @@
 #
 # Table name: events
 #
-#  id           :integer          not null, primary key
-#  author       :string
-#  type         :string
-#  status       :boolean
-#  event_object :string
-#  rand_attr    :text
+#  id             :integer          not null, primary key
+#  kind           :string
+#  status         :boolean
+#  rand_attr      :text
+#  eventable_type :string
+#  eventable_id   :integer
+#  worker_id      :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 
 class Event < ApplicationRecord
-  validates :author, :type, :status, :event_object, :rand_attr, presence: true
-  serialize :rand_attr, polymorphic: true
+  serialize :rand_attr
+  validates :kind, :status, :rand_attr, presence: true
+  belongs_to :eventable, polymorphic: true
+  belongs_to :worker
 end
