@@ -16,7 +16,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  it {should validade_presence_of(:kind)}
-  it {should validade_presence_of(:status)}
-  it {should validade_presence_of(:rand_attr)}
+  it {should validate_presence_of(:kind)}
+  it {should validate_presence_of(:status)}
+  it {should validate_presence_of(:rand_attr)}
 end
